@@ -1,1 +1,7 @@
-server/.env
+### NPM ###
+node_modules
+
+
+### FILE ENDINGS ### 
+.env
+
