@@ -1,6 +1,6 @@
-import Friends from './components/friends.jsx';
+import Friends from './components/app.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<Friends />, document.getElementById('app'));
-//window.Friends = Friends;
+ReactDOM.render(<Friends />, document.getElementById('friends'));
+// window.Friends = Friends;

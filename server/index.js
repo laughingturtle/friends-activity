@@ -10,7 +10,7 @@ const path = require('path');
 const app = express();
 
 // change to env 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 // var ip = '127.0.0.1';
 
 http.createServer(app).listen(port, function () {

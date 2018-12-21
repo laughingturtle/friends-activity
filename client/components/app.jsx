@@ -11,7 +11,7 @@ export default class Friends extends React.Component{
   render () {
     return (
     <div>
-        yo I'm your friends react service, ok?
+        I'm your react ** friends ** service.
       </div>
       )
   }

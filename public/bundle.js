@@ -513,9 +513,9 @@ module.exports = g;
 "use strict";
 
 
-var _friends = __webpack_require__(7);
+var _app = __webpack_require__(7);
 
-var _friends2 = _interopRequireDefault(_friends);
+var _app2 = _interopRequireDefault(_app);
 
 var _react = __webpack_require__(1);
 
@@ -527,8 +527,8 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_friends2.default, null), document.getElementById('app'));
-//window.Friends = Friends;
+_reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('friends'));
+// window.Friends = Friends;
 
 /***/ }),
 /* 7 */
@@ -573,7 +573,7 @@ var Friends = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'yo I\'m your friends react service, ok?'
+        'I\'m your react ** friends ** service.'
       );
     }
   }]);
