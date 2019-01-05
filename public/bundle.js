@@ -573,7 +573,7 @@ var Friends = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'I\'m your react ** friends ** service.'
+        'I\'m your react ** friends ** service!'
       );
     }
   }]);
