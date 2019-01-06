@@ -1,4 +1,0 @@
- LOAD DATA LOCAL INFILE 'names.txt' INTO TABLE users 
- LINES TERMINATED BY '\r';
- 
-
