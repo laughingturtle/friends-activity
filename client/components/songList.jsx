@@ -6,8 +6,8 @@ var SongList = ({songs, handleSongClick}) => (
     {console.log('ma props man: ', songs)}
       {songs.map((song) => (
         < SongListEntry
-          song={song.title}
-          key={song.id}
+          song={song}
+          key={song.listen_id}
           handleSongClick={handleSongClick}
         />
       )

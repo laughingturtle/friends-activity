@@ -1,3 +1,22 @@
 #friends{
     color: #ff00ff;
 }
+
+.songBlock {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 180px;
+}
+
+.circMe{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.leftBlock{
+    padding-top: 20px;
+   float:left; 
+}
+.rightBlock{
+    padding-top: 20px;
+    float:left; 
+ }

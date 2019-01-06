@@ -9,14 +9,14 @@ import SongList from './songList.jsx';
 
 
 var songs = [{
-  id: 23,
+  song_id: 23,
   title: 'bing bang bop',
   artist: 'mr whatsit',
   firstname: 'willy',
   lastname: 'walrus'
 }, {
-  id: 5,
-  title: 'boot boot',
+  song_id: 5,
+  title: 'bloot bloot',
   artist: 'Blim blam',
   firstname: 'Sooch',
   lastname: 'Arechi'
@@ -42,7 +42,7 @@ export default class FriendsApp extends React.Component{
     console.log('your data from db: ', response);
   //  console.log('this inside axios', that);
       that.setState({
-        posts: response.data
+        songs: response.data
       })
     })
     .catch (function(error){
@@ -52,6 +52,7 @@ export default class FriendsApp extends React.Component{
 
   handleSongClick(video) {
     // trigger api call to player
+    console.log('test click. Ouch that hurt');
   } 
     
   render () {

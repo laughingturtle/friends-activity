@@ -16,7 +16,7 @@ var songList = function(){
 
 var nameList = function(){
   for (var i = 0; i < 15; i++) {
-      var name = [null, faker.name.firstName(), faker.name.lastName()];
+      var name = [null, faker.name.firstName(), faker.name.lastName(), faker.image.imageUrl(50,50,"people")];
       names.push(name);  
     }
   console.log('names', names);  
@@ -33,7 +33,7 @@ var listenList = function(){
 }
 
 var songSql = "INSERT INTO songs (song_id, song_name, artist) VALUES ?";
-var nameSql = "INSERT INTO users (user_id, first_name, last_name) VALUES ?";
+var nameSql = "INSERT INTO users (user_id, first_name, last_name, img) VALUES ?";
 var listenSql = "INSERT INTO listen (listen_id, user_id, song_id, date_last_play) VALUES ?";
 
 var songValues = songList();
