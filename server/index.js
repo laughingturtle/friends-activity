@@ -7,8 +7,13 @@ const http = require('http');
 var bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+
+// Router
+var router = require('./routes.js');
+
 const app = express();
 var request = require('request');
+var db = require('../db/index');
 
 // change to env 
 const port = process.env.PORT || 3001;
@@ -26,6 +31,9 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// Set up our routes
+app.use(router);
+
 app.get('/', function (req, res) {
   res.status(200).send('GET request from the homepage');
 })
@@ -41,15 +49,15 @@ app.get('/', function (req, res) {
 */
 
 
-var playSong = (id) => {
-  request('/* Jared/s Audio Player link*/' + id, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log('success');
-    } else {
-      console.log('error connecting to player API:', error);
-    }
-  })
-};
+// var playSong = (id) => {
+//   request('/* Jared/s Audio Player link*/' + id, function (error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//       console.log('success');
+//     } else {
+//       console.log('error connecting to player API:', error);
+//     }
+//   })
+// };
 
 /*
 var playSongTwo = ({id}, callback) => {

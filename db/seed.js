@@ -71,8 +71,3 @@ var listenSeed = function() {
 songSeed();
 nameSeed();
 listenSeed();
-
-// create listen to functions
-
-// get song ID's , randomize, add to 
-
