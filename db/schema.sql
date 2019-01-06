@@ -1,21 +1,25 @@
 DROP DATABASE IF EXISTS friends;
 CREATE DATABASE friends;
 
-use friends;
+USE friends;
 
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-  user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NULL
-  );
+    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(75) NOT NULL,
+    last_name VARCHAR(75) NOT NULL
+    );
+ 
+DROP TABLE IF EXISTS songs;
 
 CREATE TABLE songs (
   song_id CHAR,
-  song_name VARCHAR(30) NOT NULL,
-  artist VARCHAR(30) NOT NULL
+  song_name VARCHAR(100) NOT NULL,
+  artist VARCHAR(50) NOT NULL
 );
+
+DROP TABLE IF EXISTS listen;
 
 CREATE TABLE listen (
   listen_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
