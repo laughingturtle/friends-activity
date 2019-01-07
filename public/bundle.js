@@ -30209,7 +30209,7 @@ var SongListEntry = function SongListEntry(_ref) {
     _react2.default.createElement(
       'div',
       { className: 'leftBlock' },
-      _react2.default.createElement('img', { className: 'circMe', src: 'http://lorempixel.com/50/50/people' })
+      _react2.default.createElement('img', { className: 'circMe', src: song.img })
     ),
     _react2.default.createElement(
       'div',

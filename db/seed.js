@@ -16,7 +16,7 @@ var songList = function(){
 
 var nameList = function(){
   for (var i = 0; i < 20; i++) {
-      var name = [null, faker.name.firstName(), faker.name.lastName(), faker.image.imageUrl(50,50,"people")];
+      var name = [null, faker.name.firstName(), faker.name.lastName(), faker.random.image(50,50)];
       names.push(name);  
     }
   console.log('names', names);  
