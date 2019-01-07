@@ -16,7 +16,7 @@ var request = require('request');
 var db = require('../db/index');
 
 // change to env 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3003;
 // var ip = '127.0.0.1';
 
 http.createServer(app).listen(port, function () {

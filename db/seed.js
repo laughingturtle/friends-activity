@@ -6,8 +6,8 @@ var names = [];
 var listen = [];
 
 var songList = function(){
-  for (var i = 0; i < 15; i++) {
-      var song = [null, faker.random.words(), faker.name.findName()];
+  for (var i = 0; i < 20; i++) {
+      var song = [i, faker.random.words(), faker.name.findName()];
       songs.push(song);  
     }
   console.log('songs', songs);  
@@ -15,7 +15,7 @@ var songList = function(){
 }
 
 var nameList = function(){
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 20; i++) {
       var name = [null, faker.name.firstName(), faker.name.lastName(), faker.image.imageUrl(50,50,"people")];
       names.push(name);  
     }
@@ -24,7 +24,7 @@ var nameList = function(){
 }
 
 var listenList = function(){
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 20; i++) {
       var listenedto = [null, Math.floor(Math.random() * 15), Math.floor(Math.random() * 15), faker.date.recent()];
       listen.push(listenedto);  
     }
