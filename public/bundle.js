@@ -20214,7 +20214,7 @@ var FriendsApp = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h3',
+          'h4',
           null,
           'Friends Activity'
         ),

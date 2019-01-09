@@ -58,7 +58,7 @@ export default class FriendsApp extends React.Component{
   render () {
     return (
       <div>
-          <h3>Friends Activity</h3>
+          <h4>Friends Activity</h4>
         <div className="">
         <SongList
           songs={this.state.songs}
