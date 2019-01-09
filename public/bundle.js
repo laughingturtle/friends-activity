@@ -20213,7 +20213,11 @@ var FriendsApp = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'I\'m your react ** friends ** service!',
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Friends Activity'
+        ),
         _react2.default.createElement(
           'div',
           { className: '' },
@@ -30162,7 +30166,6 @@ var SongList = function SongList(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'songs-list' },
-    console.log('ma props man: ', songs),
     songs.map(function (song) {
       return _react2.default.createElement(_song2.default, {
         song: song,
@@ -30213,7 +30216,7 @@ var SongListEntry = function SongListEntry(_ref) {
     ),
     _react2.default.createElement(
       'div',
-      { className: 'rightBlock' },
+      { className: 'rightBlock friendName' },
       _react2.default.createElement(
         'strong',
         null,
@@ -30223,22 +30226,22 @@ var SongListEntry = function SongListEntry(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: '', onClick: function onClick() {
+        { className: 'songName details', onClick: function onClick() {
             return handleSongClick(song.song_id);
           } },
         ' ',
-        _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: 'play-circle' }),
+        _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: 'play-circle', id: 'white' }),
         ' ',
         song.song_name
       ),
       _react2.default.createElement(
         'div',
-        { className: '' },
+        { className: 'songArtist details' },
         song.artist
       ),
       _react2.default.createElement(
         'div',
-        { className: '' },
+        { className: 'datePlayed details' },
         (0, _moment2.default)(song.date_last_played).startOf('day').fromNow()
       )
     )

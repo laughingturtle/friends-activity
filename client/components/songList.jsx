@@ -3,7 +3,7 @@ import SongListEntry from './song.jsx';
 
 var SongList = ({songs, handleSongClick}) => (
     <div className="songs-list">
-    {console.log('ma props man: ', songs)}
+    {/*console.log('ma props man: ', songs)*/}
       {songs.map((song) => (
         < SongListEntry
           song={song}
