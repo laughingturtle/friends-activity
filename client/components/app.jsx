@@ -39,7 +39,7 @@ export default class FriendsApp extends React.Component{
     // console.log('this outside axios', this);
     axios.get('http://127.0.0.1:3003/data')
     .then (function(response) {
-    console.log('your data from db: ', response);
+    //console.log('your data from db: ', response);
   //  console.log('this inside axios', that);
       that.setState({
         songs: response.data

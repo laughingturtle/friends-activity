@@ -20192,7 +20192,7 @@ var FriendsApp = function (_React$Component) {
       var that = this;
       // console.log('this outside axios', this);
       _axios2.default.get('http://127.0.0.1:3003/data').then(function (response) {
-        console.log('your data from db: ', response);
+        //console.log('your data from db: ', response);
         //  console.log('this inside axios', that);
         that.setState({
           songs: response.data
@@ -30208,7 +30208,9 @@ var SongListEntry = function SongListEntry(_ref) {
       handleSongClick = _ref.handleSongClick;
   return _react2.default.createElement(
     'div',
-    { className: 'songBlock' },
+    { className: 'songBlock', onClick: function onClick() {
+        return handleSongClick(song.song_id);
+      } },
     _react2.default.createElement(
       'div',
       { className: 'leftBlock' },
@@ -30226,9 +30228,7 @@ var SongListEntry = function SongListEntry(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'songName details', onClick: function onClick() {
-            return handleSongClick(song.song_id);
-          } },
+        { className: 'songName details' },
         ' ',
         _react2.default.createElement(_reactFontawesome.FontAwesomeIcon, { icon: 'play-circle', id: 'white' }),
         ' ',

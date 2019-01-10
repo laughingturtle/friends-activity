@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import sql from '../../server/models/index'
+const request = require('supertest');
 
 test('fake test', () => {
     expect(true).toBeTruthy();
@@ -10,6 +11,15 @@ test('fake test', () => {
  test('fake test', () => {
     expect(false).toBeFalsy();
  });
+
+ describe("retrieve the data", () =>{
+   test('it should respond with correct numbers of songs', async () => {
+     const response = await request("http://127.0.0.1:3003").get('/data');
+     expect(response.statusCode).toBe(200);
+     expect(response.body.length).toBe(9);
+     expect(response.body.length).not.toBe(121);
+   })
+ })
 
 //  test('test sql', () => {
 //    console.log('what string: ', sql.lastListenedTo);

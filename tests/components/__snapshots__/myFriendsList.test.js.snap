@@ -2,7 +2,9 @@
 
 exports[`<FriendsApp /> render() renders the component 1`] = `
 <div>
-  I'm your react ** friends ** service!
+  <h4>
+    Friends Activity
+  </h4>
   <div
     className=""
   >
@@ -33,7 +35,9 @@ exports[`<FriendsApp /> render() renders the component 1`] = `
 
 exports[`<SongList /> render() renders the component 1`] = `
 <div>
-  I'm your react ** friends ** service!
+  <h4>
+    Friends Activity
+  </h4>
   <div
     className=""
   >
