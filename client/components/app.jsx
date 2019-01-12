@@ -31,16 +31,16 @@ var producer = Producer.create({
 });
 
 const sendMessage = (songName) => {
-    producer.send([{
-        id: '1',
-        body: songName
-      }], function(err) {
-        if (err){
-         console.log(err);
-      } else {
-        console.log('your sqs succeeded')
-      }
-      });
+  producer.send([{
+      id: '1',
+      body: songName
+    }], function(err) {
+      if (err){
+        console.log(err);
+    } else {
+      console.log('your sqs succeeded');
+    }
+  });
 }
 
 export default class FriendsApp extends React.Component{
