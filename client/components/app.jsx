@@ -1,12 +1,12 @@
 import React from 'react';
 import axios from 'axios';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlayCircle  } from '@fortawesome/free-solid-svg-icons'
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlayCircle  } from '@fortawesome/free-solid-svg-icons';
 library.add(faPlayCircle);
 import SongList from './songList.jsx';
-
+const creds = require('../../sqs/awsConfig');
+var Producer = require('sqs-producer');
 
 var songs = [{
   song_id: 23,
@@ -21,6 +21,27 @@ var songs = [{
   firstname: 'Sooch',
   lastname: 'Arechi'
 }];
+
+
+var producer = Producer.create({
+  queueUrl: 'https://sqs.us-east-2.amazonaws.com/021058984666/song-queue',
+  region: 'us-east-2',
+  accessKeyId: creds.AWS_ACCESS_KEY_ID,
+  secretAccessKey: creds.AWS_SECRET_ACCESS_KEY
+});
+
+const sendMessage = (songName) => {
+    producer.send([{
+        id: '1',
+        body: songName
+      }], function(err) {
+        if (err){
+         console.log(err);
+      } else {
+        console.log('your sqs succeeded')
+      }
+      });
+}
 
 export default class FriendsApp extends React.Component{
   constructor(props){
@@ -50,8 +71,8 @@ export default class FriendsApp extends React.Component{
     });
   }
 
-  handleSongClick(video) {
-    // trigger api call to player
+  handleSongClick(songName) {
+    sendMessage(songName);
     console.log('test click. Ouch that hurt');
   } 
     

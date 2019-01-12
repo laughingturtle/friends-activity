@@ -30,7 +30,7 @@ const RightBlock = styled.div`
 `;
 
 var SongListEntry = ({song, handleSongClick}) => (
-      <SongBlock onClick={() => handleSongClick(song.song_id)}>
+      <SongBlock onClick={() => handleSongClick(song.song_name)}>
         <LeftBlock><CircleImg src={song.img}/></LeftBlock>
         <RightBlock className="friendName"><strong>{song.first_name} {song.last_name}</strong>   
           <div className="details"> <FontAwesomeIcon icon="play-circle" id="white"/> {song.song_name}</div>

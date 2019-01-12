@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">85.71% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/3</span>
+        <span class='fraction'>6/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>6/6</span>
       </div>
     </div>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -60,13 +60,65 @@
 15
 16
 17
-18</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -79,18 +131,44 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import moment from 'moment';
 &nbsp;
-var SongListEntry = <span class="fstat-no" title="function not covered" >({</span>song, handleSongClick}) =&gt; (
-<span class="cstat-no" title="statement not covered" >      &lt;div className="songBlock" onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleSongClick(song.song_id)}</span>&gt;</span>
-        &lt;div className="leftBlock"&gt;&lt;img className="circMe" src={song.img}/&gt;&lt;/div&gt;
-        &lt;div className="rightBlock friendName"&gt;&lt;strong&gt;{song.first_name} {song.last_name}&lt;/strong&gt;
-          
-          &lt;div className="songName details"&gt; &lt;FontAwesomeIcon icon="play-circle" id="white"/&gt; {song.song_name}&lt;/div&gt;
-          &lt;div className="songArtist details"&gt;{song.artist}&lt;/div&gt;
-          &lt;div className="datePlayed details"&gt;{moment(song.date_last_played).startOf('day').fromNow()}&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt; 
+const SongBlock = styled.div`
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 270px; 
+  cursor: pointer;
+`;
+&nbsp;
+const CircleImg = styled.img`
+  border-radius: 50%;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  border: 2px solid #b3b3b3;
+`;
+&nbsp;
+const LeftBlock = styled.div`
+  padding-top: 20px;
+  float:left; 
+  clear:left;
+`;
+&nbsp;
+const RightBlock = styled.div`
+  padding-top: 20px;
+  float:left; 
+`;
+&nbsp;
+var SongListEntry = ({song, handleSongClick}) =&gt; (
+      &lt;SongBlock onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleSongClick(song.song_name)}</span>&gt;
+        &lt;LeftBlock&gt;&lt;CircleImg src={song.img}/&gt;&lt;/LeftBlock&gt;
+        &lt;RightBlock className="friendName"&gt;&lt;strong&gt;{song.first_name} {song.last_name}&lt;/strong&gt;   
+          &lt;div className="details"&gt; &lt;FontAwesomeIcon icon="play-circle" id="white"/&gt; {song.song_name}&lt;/div&gt;
+          &lt;div className="details"&gt;{song.artist}&lt;/div&gt;
+          &lt;div className="details small"&gt;{moment(song.date_last_played).startOf('day').fromNow()}&lt;/div&gt;
+        &lt;/RightBlock&gt;
+      &lt;/SongBlock&gt; 
   );
 &nbsp;
   // `var` declarations will only exist globally where explicitly defined
@@ -100,7 +178,7 @@ export default SongListEntry;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 09 2019 21:26:04 GMT-0800 (Pacific Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Jan 11 2019 22:41:46 GMT-0800 (Pacific Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
