@@ -30,10 +30,11 @@ var producer = Producer.create({
   secretAccessKey: creds.AWS_SECRET_ACCESS_KEY
 });
 
-const sendMessage = (songName) => {
+const sendMessage = (song) => {
+  console.log('song inside send message: ', song);
   producer.send([{
       id: '1',
-      body: songName
+      body: JSON.stringify({songName: song.song_name, songUrl:song.song_url,  songArtist:song.artist})
     }], function(err) {
       if (err){
         console.log(err);
@@ -58,7 +59,7 @@ export default class FriendsApp extends React.Component{
   getSongs(){
     var that = this;
     // console.log('this outside axios', this);
-    axios.get('http://127.0.0.1:3003/data')
+    axios.get('/data')
     .then (function(response) {
     //console.log('your data from db: ', response);
   //  console.log('this inside axios', that);
@@ -71,8 +72,8 @@ export default class FriendsApp extends React.Component{
     });
   }
 
-  handleSongClick(songName) {
-    sendMessage(songName);
+  handleSongClick(song) {
+    sendMessage(song);
     console.log('test click. Ouch that hurt');
   } 
     
