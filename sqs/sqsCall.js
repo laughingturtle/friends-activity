@@ -1,4 +1,4 @@
-const creds = require('./awsConfig');
+const creds = require('../../_awsConfig/awsConfigFriendsApp');
 var Producer = require('sqs-producer');
 
 var producer = Producer.create({
