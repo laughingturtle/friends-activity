@@ -39,39 +39,3 @@ app.get('/', function (req, res) {
 })
 
 
-/* 
-
- :: API CALL :: 
-
- Had crazy challenges setting up earlier version of mysql on older machine (2 days faffing around), while laptop is fixed, oy vey.
- Anyhow, so I have not been able to actually test these, they're kind of roughed out options right now...
-
-*/
-
-
-// var playSong = (id) => {
-//   request('/* Jared/s Audio Player link*/' + id, function (error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       console.log('success');
-//     } else {
-//       console.log('error connecting to player API:', error);
-//     }
-//   })
-// };
-
-/*
-var playSongTwo = ({id}, callback) => {
-  // TODO
-  $.get('Jared/s Audio Player link', {
-    id: id
-  })
-    .done(({items}) => {
-      if (callback) {
-        callback(items);
-      }
-    })
-    .fail(({responseJSON}) => {
-      responseJSON.error.forEach((err) => console.error(err));
-    });
-};
-*/

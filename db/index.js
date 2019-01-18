@@ -6,9 +6,9 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  database: 'friends'
+  host: 'friends.cidfwkcbph8b.us-west-1.rds.amazonaws.com',
+  user: 'friends',
+  database: 'hack22!Q'
 });
 
 connection.connect(function(err) {
