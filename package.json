@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "build": "webpack --watch",
     "seed": "node .db/seed.js",
-    "start": "nodemon ./server/server.js"
+    "start": "node .db/seed.js && nodemon ./server/server.js"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +45,7 @@
     "moment": "^2.23.0",
     "morgan": "^1.9.0",
     "mysql": "^2.16.0",
+    "nodemon": "^1.18.9",
     "puppeteer-core": "^1.11.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
