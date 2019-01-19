@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle  } from '@fortawesome/free-solid-svg-icons';
 library.add(faPlayCircle);
 import SongList from './songList.jsx';
-const creds = require('../../sqs/awsConfig');
 var Producer = require('sqs-producer');
 
 var songs = [{
@@ -26,8 +25,8 @@ var songs = [{
 var producer = Producer.create({
   queueUrl: 'https://sqs.us-east-2.amazonaws.com/021058984666/song-queue',
   region: 'us-east-2',
-  accessKeyId: creds.AWS_ACCESS_KEY_ID,
-  secretAccessKey: creds.AWS_SECRET_ACCESS_KEY
+  accessKeyId:  process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
 
 const sendMessage = (song) => {
