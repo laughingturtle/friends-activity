@@ -4,10 +4,7 @@
   "description": "",
   "main": "./server/index.js",
   "scripts": {
-    "test": "jest --coverage",
-    "build": "webpack --watch",
-    "seed": "node .db/seed.js",
-    "start": "node .db/seed.js && nodemon ./server/server.js"
+  "start": "nodemon ./server/server.js"
   },
   "keywords": [],
   "author": "",
