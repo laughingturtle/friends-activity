@@ -29,7 +29,7 @@ var producer = Producer.create({
 });
 
 const sendMessage = (song) => {
-  console.log('song inside send message: ', song);
+  console.log('sending this song: ', song);
   producer.send([{
       id: '1',
       body: JSON.stringify({songName: song.song_name, songUrl:song.song_url,  songArtist:song.artist})
