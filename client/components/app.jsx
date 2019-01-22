@@ -23,9 +23,9 @@ var songs = [{
 
 var producer = Producer.create({
   queueUrl: 'https://sqs.us-east-2.amazonaws.com/021058984666/song-queue',
-   region: 'us-east-2'//,
-  // accessKeyId:  process.env.aws_access_key_id,
-  // secretAccessKey: process.env.aws_secret_access_key
+   region: 'us-east-2',
+  accessKeyId:  process.env.aws_access_key_id,
+  secretAccessKey: process.env.aws_secret_access_key
 });
 
 const sendMessage = (song) => {
