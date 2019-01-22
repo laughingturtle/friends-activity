@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle  } from '@fortawesome/free-solid-svg-icons';
 library.add(faPlayCircle);
 import SongList from './songList.jsx';
-var Producer = require('sqs-producer');
 
 var songs = [{
   song_id: 23,
@@ -21,27 +20,6 @@ var songs = [{
   lastname: 'Arechi'
 }];
 
-var producer = Producer.create({
-  queueUrl: 'https://sqs.us-east-2.amazonaws.com/021058984666/song-queue',
-   region: 'us-east-2',
-  accessKeyId:  process.env.aws_access_key_id,
-  secretAccessKey: process.env.aws_secret_access_key
-});
-
-const sendMessage = (song) => {
-  console.log('sending this song: ', song);
-  producer.send([{
-      id: '1',
-      body: JSON.stringify({songName: song.song_name, songUrl:song.song_url,  songArtist:song.artist})
-    }], function(err) {
-      if (err){
-        console.log(err);
-    } else {
-      console.log('your sqs succeeded');
-    }
-  });
-}
-
 export default class FriendsApp extends React.Component{
   constructor(props){
     super(props);
@@ -54,13 +32,21 @@ export default class FriendsApp extends React.Component{
     this.getSongs();
   }
 
+  sendSong(song){
+    console.log('my song inside send song', song);
+    axios.post('/song')
+    .then (function(response) {
+    console.log('song sent: ', response, song);
+    })
+    .catch (function(error){
+      console.log(error);
+    });
+  }
+
   getSongs(){
     var that = this;
-    // console.log('this outside axios', this);
     axios.get('/data')
     .then (function(response) {
-    //console.log('your data from db: ', response);
-  //  console.log('this inside axios', that);
       that.setState({
         songs: response.data
       })
@@ -70,9 +56,8 @@ export default class FriendsApp extends React.Component{
     });
   }
 
-  handleSongClick(song) {
-    sendMessage(song);
-    console.log('test click. Ouch that hurt');
+  handleSongClick(song) { 
+    this.sendSong(song);
   } 
     
   render () {

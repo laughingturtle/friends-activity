@@ -1,4 +1,13 @@
+var Producer = require('sqs-producer');
 var db = require('../../db/index');
+
+
+var producer = Producer.create({
+  queueUrl: 'https://sqs.us-east-2.amazonaws.com/021058984666/song-queue',
+   region: 'us-east-2',
+  accessKeyId:  process.env.aws_access_key_id,
+  secretAccessKey: process.env.aws_secret_access_key
+});
 
   module.exports = {
       
@@ -13,5 +22,25 @@ var db = require('../../db/index');
           }
         });
       }
+    },
+    postSongToSQSqueue: {
+      post: function (song, cb) {
+          console.log('sending this song: ', song);
+          producer.send([{
+              id: '1',
+              body: JSON.stringify({songName: song.song_name, songUrl:song.song_url,  songArtist:song.artist})
+            }], function(err) {
+              if (err){
+                console.log(err);
+            } else {
+              console.log('your sqs succeeded');
+            }
+          });
+      }
     }
   };
+
+
+
+  
+  
