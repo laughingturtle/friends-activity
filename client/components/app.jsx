@@ -38,7 +38,7 @@ export default class FriendsApp extends React.Component{
       mySong: song
     })
     .then (function(response) {
-    console.log('song sent to SQS: ', response, song);
+    console.log('client response: song sent to SQS: ', response, song);
     })
     .catch (function(error){
       console.log('sqs error', error);
