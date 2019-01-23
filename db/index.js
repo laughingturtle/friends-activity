@@ -6,19 +6,17 @@ var mysql = require('mysql');
 // You will need to connect with the user "root", no password,
 // and to the database "chat".
 
-/*   // OLD CONNECTION //
-var connection = mysql.createConnection({
-  host: 'friends.cidfwkcbph8b.us-west-1.rds.amazonaws.com',
-  user: 'friends',
-  password: 'hack22!Q',
-  database: 'friends'
-});
+// var connection = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   database: 'friends'
+// });
 
-connection.connect(function(err) {
-  if (err) { throw err; }
-  console.log('You are now connected...');
-});
-*/
+// connection.connect(function(err) {
+//   if (err) { throw err; }
+//   console.log('You are now connected...');
+// });
+
 
 var connection = mysql.createConnection({
   host     : process.env.RDS_HOSTNAME,
@@ -40,8 +38,6 @@ connection.connect(function(err) {
   }
   console.log('Connected to database.');
 });
-
-//connection.end();
 
 
 module.exports.connection = connection;

@@ -33,10 +33,12 @@ export default class FriendsApp extends React.Component{
   }
 
   sendSong(song){
-    console.log('my song inside send song', song);
-    axios.post('/song')
+    console.log('my song inside send song - ready to sling to SQS', song);
+    axios.post('/song', {
+      mySong: song
+    })
     .then (function(response) {
-    console.log('song sent: ', response, song);
+    console.log('song sent to SQS: ', response, song);
     })
     .catch (function(error){
       console.log(error);

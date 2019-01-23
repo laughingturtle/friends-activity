@@ -9,6 +9,6 @@ router.use(function(req, res, next) {
 
 //Connect controller methods to their corresponding routes
 router.get('/data', controller.data.get);
-router.get('/song', controller.data.post);
+router.post('/song', controller.songs.post);
 
 module.exports = router;
