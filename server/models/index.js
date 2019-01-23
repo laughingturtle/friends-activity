@@ -25,17 +25,17 @@ var producer = Producer.create({
     },
     postSongToSQSqueue: {
       post: function (song, cb) {
-          console.log('the  model is sending this song: ', song);
-          producer.send([{
-              id: '1',
-              body: JSON.stringify({songName: song.song_name, songUrl: song.song_url,  songArtist: song.artist})
-            }], function(err) {
-              if (err){
-                console.log(err);
-            } else {
-              console.log('your sqs succeeded');
-            }
-          });
+        console.log('the  model is sending this song: ', song);
+        producer.send([{
+            id: '1',
+            body: JSON.stringify({songName: song.song_name, songUrl: song.song_url,  songArtist: song.artist})
+          }], function(err) {
+            if (err){
+              console.log(err);
+          } else {
+            console.log('your sqs succeeded');
+          }
+        });
       }
     }
   };
