@@ -20333,7 +20333,7 @@ var FriendsApp = function (_React$Component) {
   }, {
     key: 'sendSong',
     value: function sendSong(song) {
-      console.log('my song inside send song SQS', song);
+      console.log('my song inside sendSong SQS', song);
       _axios2.default.post('/song', {
         mySong: song
       }).then(function (response) {

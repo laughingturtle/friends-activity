@@ -33,7 +33,7 @@ export default class FriendsApp extends React.Component{
   }
 
   sendSong(song){
-    console.log('my song inside send song SQS', song);
+    console.log('my song inside sendSong SQS', song);
     axios.post('/song', {
       mySong: song
     })
@@ -44,7 +44,7 @@ export default class FriendsApp extends React.Component{
       console.log('sqs error', error);
     });
   }
-  
+
   getSongs(){
     var that = this;
     axios.get('/data')

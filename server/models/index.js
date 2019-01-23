@@ -29,11 +29,12 @@ var producer = Producer.create({
         producer.send([{
             id: '1',
             body: JSON.stringify({songName: song.song_name, songUrl: song.song_url,  songArtist: song.artist})
-          }], function(err) {
+          }], function(err, result) {
             if (err){
               console.log(err);
           } else {
             console.log('your sqs succeeded');
+            cb(null, result);
           }
         });
       }
