@@ -15,7 +15,7 @@ module.exports = {
   songs: {  
     post: (req, res) => {
       console.log('my song on the server', req.body);
-      var message = {song_name: req.body.mySong.song_name , song_url: req.body.mySong.song_url,  artist:req.body.mySong.artist};
+      var message = {song_name: req.body.mySong.song_name, song_url: req.body.mySong.song_url,  artist:req.body.mySong.artist};
       console.log(message);
       models.postSongToSQSqueue.post(message, (err, result) => {
         if (err) {

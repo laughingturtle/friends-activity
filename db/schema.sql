@@ -7,21 +7,21 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(75),
-  last_name VARCHAR(75),
-  img VARCHAR(200)
+  first_name VARCHAR(125),
+  last_name VARCHAR(125),
+  img VARCHAR(250)
 );
  
 DROP TABLE IF EXISTS songs;
 
 CREATE TABLE songs (
   song_id INT,
-  song_name VARCHAR(100),
-  artist VARCHAR(50),
+  song_name VARCHAR(250),
+  artist VARCHAR(250),
   song_url VARCHAR(250),
-  song_album VARCHAR(50),
-  song_time VARCHAR(50),
-  song_playlist VARCHAR(50)
+  song_album VARCHAR(250),
+  song_time VARCHAR(250),
+  song_playlist VARCHAR(250)
 );
 
 DROP TABLE IF EXISTS listen;
